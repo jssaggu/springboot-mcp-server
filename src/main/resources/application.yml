@@ -1,0 +1,27 @@
+spring:
+  ai:
+    mcp:
+      server:
+        name: my-mcp-server
+        version: 1.0.0
+        type: SYNC     # or ASYNC for non-blocking reactive mode
+        sse-endpoint: /sse
+        sse-message-endpoint: /mcp/messages
+        capabilities:
+          tool: true
+          resource: true
+          prompt: true
+          completion: true
+    model:
+      chat: ollama
+    ollama:
+      chat:
+        model: llama3.2
+
+  application:
+    name: mcp
+#  main:
+    # NOTE: You must disable the banner and the console logging
+    # to allow the STDIO transport to work !!!
+#    banner-mode: off
+#    web-application-type: none
